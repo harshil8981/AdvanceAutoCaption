@@ -44,7 +44,7 @@ Eg:- `/set_cap
 ║┣⪼📃ʙᴏᴛ : <a href='https://t.me/AutoCaption_Robot'>Auto Caption</a>
 ║┣⪼👦Cʀᴇᴀᴛᴏʀ : <a href='https://t.me/Mrkiller_1109'>Mʀᴋɪʟʟᴇʀ  ⚠️</a>
 ║┣⪼🤖Uᴘᴅᴀᴛᴇ : <a href='https://t.me/Mrkillerdeveloper'>Mʀᴋɪʟʟᴇʀ Dᴇᴠᴇʟᴏᴘᴇʀ™</a>
-║┣⪼📡Hᴏsᴛᴇᴅ ᴏɴ : ᴋᴏʏᴇʙ
+║┣⪼📡Hᴏsᴛᴇᴅ ᴏɴ : VPS
 ║┣⪼🗣️Lᴀɴɢᴜᴀɢᴇ : Pʏᴛʜᴏɴ3
 ║┣⪼📚Lɪʙʀᴀʀʏ : Pʏʀᴏɢʀᴀᴍ 2.11.6
 ║┣⪼🗒️Vᴇʀsɪᴏɴ : 2.0.8 [ᴍᴏsᴛ sᴛᴀʙʟᴇ]
