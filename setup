@@ -1,0 +1,65 @@
+pprint (){
+	cred='\033[0;31m'
+	cgreen='\033[0;32m'
+	cyellow='\033[0;33m'
+	cblue='\033[0;34m'
+	cpurple='\033[0;35m'
+	eval "export color='$cpurple'"
+	[ ! -z $2 ] && eval "export color=\"\$$2\""
+    printf "$color $1"
+}
+
+color_reset(){ printf '\033[0;37m';}
+
+installation(){
+	pprint "\n\nUpgrading pip and installing dependency packages..."
+	pip3 install -U pip &>>pypilog.txt &&
+	pip3 install -U -r requirements.txt &>>pypilog.txt &&
+	pprint "DONE.\n" "cgreen" && return
+	pprint "FAIL.\n" "cred"
+	exit 1
+}
+
+clear
+pprint "Welcome to AdvanceAutoCaption Setup Installer\n\n"
+pprint "If you see any error during Installation Process, Please refer to these files for logs: "
+pprint "\nFor node js errors , Checkout nodelog.txt"
+pprint "\nFor pypi packages errors , Checkout pypilog.txt"
+sleep 1
+pprint "\n\nScript needs sudo privileges in order to update & install packages.\n"
+sudo test
+
+update
+packages
+node
+installation
+pprint "\n\n\n\n\nAdvanceAutoCaption Installation Completed !" "cgreen"
+sleep 1
+clear
+
+pprint "\nEnter Your Values Below\n\n\n"
+pprint "API ID: "; color_reset; read api_id
+pprint "\nAPI HASH: "; color_reset; read api_hash
+pprint "\nBOT TOKEN: "; color_reset; read bot_token
+pprint "\nADMIN:"; color_reset; read admin
+pprint "\nMONGO DB URI: "; color_reset; read mongo_db
+pprint "\nFORCE SUB: "; color_reset; read force_sub
+pprint "\nSTART PIC: "; color_reset; read silicon_pic
+
+pprint "\n\nProcessing your vars, wait a while !" "cgreen"
+
+if [ -f .env ]; then
+	rm .env
+fi
+
+echo """API_ID = $api_id
+API_HASH = $api_hash
+BOT_TOKEN = $bot_token
+MONGO_DB = $mongo_db
+FORCE_SUB = $force_sub
+START_PIC = $silicon_pic
+ADMIN = $admin""" > .env
+clear
+
+pprint "\n\n\nThanks for using Advance Auto Caption installer, your vars have been saved successfully ! \nIf you wanna add more variables add them in your env by : vi .env"
+pprint "\n\nNow you can start the bot by : bash start\n\n"
